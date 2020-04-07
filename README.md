@@ -1,5 +1,40 @@
 # meta-ivanz
-YOCTO Project meta layer for testing purpose. It create a webserver on RaspberryPI 4
+YOCTO Project meta layer for testing purpose. It create a webserver on RaspberryPI 4. It it based on "zeus" branch.
+
+This the script to get all the necessary components:
+```
+#!/usr/bin/env bash
+
+set -e
+
+usage() {
+  echo "Usage: $0 <target-directory>"
+}
+
+if [ $# -ne 1 ]; then
+  usage
+  exit 1
+fi
+
+directory=$1
+
+if [ -e "${directory}" ]; then
+  echo "Error: \"${directory}\" already exists."
+  usage
+fi
+
+# create the directory
+mkdir -p "${directory}/sources" && cd "${directory}"
+
+# clone poky and other layers
+git clone -b zeus git://git.yoctoproject.org/poky.git sources/poky
+git clone -b zeus https://github.com/agherzan/meta-raspberrypi.git sources/meta-raspberrypi
+git clone -b zeus https://github.com/openembedded/meta-openembedded.git sources/meta-openembedded
+
+# clone meta-ivanz layer
+git clone https://github.com/overkill74/meta-ivanz.git sources/meta-ivanz
+echo "Done, type \"cd ${directory} && . ./sources/poky/oe-init-build-env\" to create the build environment"
+```
 
 To let it works this is the bblayer.conf that nust be used:
 ```
