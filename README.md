@@ -33,6 +33,7 @@ git clone -b zeus https://github.com/openembedded/meta-openembedded.git sources/
 
 # clone meta-ivanz layer
 git clone https://github.com/overkill74/meta-ivanz.git sources/meta-ivanz
+
 echo "Done, type \"cd ${directory} && . ./sources/poky/oe-init-build-env\" to create the build environment"
 ```
 
