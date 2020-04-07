@@ -37,6 +37,13 @@ git clone https://github.com/overkill74/meta-ivanz.git sources/meta-ivanz
 echo "Done, type \"cd ${directory} && . ./sources/poky/oe-init-build-env\" to create the build environment"
 ```
 
+This it to clone the meta-ivanz with ssh (no user/pass verification on push)
+Please [add the key here](https://github.com/settings/keys) and change the git clone to:
+
+```
+git clone git+ssh://git@github.com/overkill74/meta-ivanz.git sources/meta-ivanz
+```
+
 To let it works this is the bblayer.conf that nust be used:
 ```
 # POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
