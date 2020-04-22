@@ -66,6 +66,7 @@ IMAGE_FEATURES_remove = "splash"
 #}
 
 # Add support for WiFi and Bluetooth
-IMAGE_INSTALL += "linux-firmware linux-firmware-bcm43430"
-
+IMAGE_INSTALL += "linux-firmware"
+#linux-firmware-bcm43430"
+IMAGE_INSTALL += "linux-firmware-rpidistro-bcm43455"
 
