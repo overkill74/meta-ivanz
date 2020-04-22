@@ -70,3 +70,6 @@ IMAGE_INSTALL += "linux-firmware"
 #linux-firmware-bcm43430"
 IMAGE_INSTALL += "linux-firmware-rpidistro-bcm43455"
 
+# Install cpp hello world - sources version
+IMAGE_INSTALL += "hello-world-cpp-sources"
+
